@@ -41,12 +41,10 @@
                         }  
                         else {
                             echo "<script>alert('Mật khẩu không đúng, vui lòng nhập lại')</script>";
-                            require_once "login.php";
                         }   
                     }
                     else {
                         echo "<script>alert('Tài khoản không tồn tại')</script>";
-                        require_once "login.php";
                     }
                 }
                 break;
@@ -62,12 +60,10 @@
                         $sql = "UPDATE taikhoan SET matkhau= '$n_password' WHERE email='".$inputEmail."' LIMIT 1";
                         $sql_run = mysqli_query($conn, $sql);
                         echo "<script>alert('Đã đổi mật khẩu về 1')</script>";
-                        require_once "login.php";
-                        //header("location:index.php");
+                        header("location:index.php?page=signIn");
                     }
                     else {
                         echo "<script>alert('Tài khoản không tồn tại')</script>";
-                        require_once "login.php";
                     } 
                 }
                 break;  

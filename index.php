@@ -229,7 +229,6 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
             if (isset($_POST['submit_password'])) {
                 $password = $_POST['password'];
                 $r_password = $_POST['r_password'];
-                var_dump($_SESSION);
                 if (!check_password_is_unmatched($password, $r_password)) {
                     $password_hash = password_hash($password, PASSWORD_DEFAULT);
                     $sql = "UPDATE taikhoan SET matkhau='".$password_hash."'WHERE email='".$_SESSION['reset_password']['username']."' LIMIT 1";
@@ -260,24 +259,28 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
             require "view/customerInfo.php";
             if(isset($_POST['submit_info'])) {
                 $tenTK = $_POST['tenTK'];
-                if (isset($tenTK)) {
+                if (isset($tenTK) && !empty($tenTK)) {
                     $sql = "UPDATE taikhoan SET tenTK='".$tenTK."' WHERE email='".$_SESSION['user']['username']."' LIMIT 1";
                     $sql_run = mysqli_query($conn, $sql);
-                    echo "Thay đổi họ và tên thành công";
+                    $notif = 'Thay đổi họ và tên thành công';
+                    echo "<script>alert('{$notif}')</script>";
                 }
         
                 $email = $_POST['email'];
-                if (isset($email)) {
+                if (isset($email) && !empty($email)) {
                     $sql = "UPDATE taikhoan SET email='".$email."' WHERE email='".$_SESSION['user']['username']."' LIMIT 1";
                     $sql_run = mysqli_query($conn, $sql);
-                    echo "Thay đổi email thành công";
+                    $notif = 'Thay đổi email thành công';
+                    echo "<script>alert('{$notif}')</script>";
+                    
                 }
         
                 $phone = $_POST['phone'];
-                if (isset($phone)) {
+                if (isset($phone) && !empty($phone)) {
                     $sql = "UPDATE taikhoan SET dienthoai='".$phone."' WHERE email='".$_SESSION['user']['username']."' LIMIT 1";
                     $sql_run = mysqli_query($conn, $sql);
-                    echo "Thay đổi số điện thoại thành công";
+                    $notif = 'Thay đổi số điện thoại thành công';
+                    echo "<script>alert('{$notif}')</script>";
                 }
                 login_session($email, $tenTK, $_SESSION['user']['phanquyen']);
                 require "view/customerInfo.php";
@@ -288,24 +291,28 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
                 $r_n_password = $_POST['r_n_password'];
                 
                 if(password_verify($c_password, $user_info['matkhau'])) {
-                    if (check_password_is_unmatched($n_password, $r_n_password)) {
+                    if (!check_password_is_unmatched($n_password, $r_n_password)) {
                         $password_hash = password_hash($n_password, PASSWORD_DEFAULT);
                         $sql = "UPDATE taikhoan SET matkhau='".$password_hash."' WHERE email='".$_SESSION['user']['username']."' LIMIT 1";
                         $sql_run = mysqli_query($conn, $sql);
                         if($sql_run) {
-                            echo "Thay đổi mật khẩu thành công";
+                            $notif = 'Thay đổi mật khẩu thành công';
+                            echo "<script>alert('{$notif}')</script>";
                             require "view/customerInfo.php";
                         }
                         else {
-                            echo "Đã có lỗi xảy ra";
+                            $notif = 'Đã có lỗi xảy ra';
+                            echo "<script>alert('{$notif}')</script>";
                         }
                     }
                     else {
-                        echo "Mật khẩu mới không trùng khớp với nhau";
+                        $notif = 'Mật khẩu mới không trùng khớp với nhau';
+                        echo "<script>alert('{$notif}')</script>";
                     }
                 }
                 else {
-                    echo "Mật khẩu hiện tại không đúng";
+                    $notif = 'Mật khẩu hiện tại không đúng';
+                    echo "<script>alert('{$notif}')</script>";
                 }
             }
             break;
