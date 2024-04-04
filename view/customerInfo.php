@@ -1,9 +1,6 @@
 <?php
-    $sql = "SELECT tenTK, email, matkhau, dienthoai FROM taikhoan WHERE email='".$_SESSION['user']['username']."' LIMIT 1";
-    $result = mysqli_query($conn, $sql);
-    $user_info = mysqli_fetch_array($result);
+    header("location".$_SERVER['REQUEST_URI']);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,7 +19,7 @@
                     <!-- các elements trên navbar -->
                     <ul class="header-navbar-list">
                         <li class="header-navbar-items">
-                            <a href=""><img src="asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                            <a href="index.php?page=home"><img src="asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                         </li>
                         <li class="header-navbar-items">
                             <div class="header-navbar-items-search">
@@ -40,7 +37,7 @@
                                     </a>
                                 </div>
                                 <div class="header-navbar-items-SignIn-SignUp">
-                                    <a id="signin" href="?page=signIn"><div class="header-navbar-items-SignIn"><?php echo $_SESSION['user']['fullname'];?></div></a>
+                                    <a id="signin" href="?page=customerInfo"><div class="header-navbar-items-SignIn"><?php echo $_SESSION['user']['name'];?></div></a>
                                     <div class="header-navbar-items-separate"></div>
                                     <a id="signup" href="?page=signOut"><div class="header-navbar-items-SignUp">Đăng xuất</div></a>
                                 </div>
@@ -106,21 +103,21 @@
                 <div class="container-bottom">
                     <div class="container-content-left">
                         <div class="container-content-left-user">
-                            <b><?php echo $_SESSION['user']['fullname'];?></b>
+                            <b><?php echo $_SESSION['user']['name'];?></b>
                         </div>
                         <div class="container-content-left-userInfo">
                             <i class="fa-regular fa-user"></i>
-                            Thông tin cá nhân
+                            <a href="?page=customerInfo" style="text-decoration: none !important; color: green;">Thông tin cá nhân</a>
                         </div>
                         <div class="container-content-left-order">
                             <i class="fa-regular fa-clipboard"></i>
-                            Lịch sử đơn hàng
+                            <a href="?page=customerOrders" style="text-decoration: none !important; color: green;">Lịch sử đơn hàng</a>
                         </div>
                     </div>
                     <div class="container-content-right">
                         <h3 class="sub-title">Thông tin cá nhân</h3>
-                        <h4 class="greeting">Xin chào bạn <span class="username"><?php echo $_SESSION['user']['fullname'];?></span></h4>
-                        <form class="info-list" action="?page=customerInfo" method="POST">
+                        <h4 class="greeting">Xin chào bạn <span class="username"><?php echo $_SESSION['user']['name'];?></span></h4>
+                        <form class="info-list" action="?page=customerInfo" method="POST" onSubmit="window.location.reload()">
                             <div class="infos">
                                 <div class="float-left">Họ và tên</div>
                                 <input class="infos-field" type="text" name="tenTK" placeholder="<?php echo $user_info['tenTK'];?>">           

@@ -1,15 +1,11 @@
-<?php
-    include "../lib/session.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../asset/css/customerOrdersCSS.css">
-        <link rel="icon" href="../asset/img/vnbLogo.jpg">
+        <link rel="stylesheet" href="asset/css/customerOrdersCSS.css">
+        <link rel="icon" href="asset/img/vnbLogo.jpg">
         <title>Lịch sử đơn hàng</title>
     </head>
     <body>
@@ -20,7 +16,7 @@
                     <!-- các elements trên navbar -->
                     <ul class="header-navbar-list">
                         <li class="header-navbar-items">
-                            <a href=""><img src="../asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                            <a href=""><img src="asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                         </li>
                         <li class="header-navbar-items">
                             <div class="header-navbar-items-search">
@@ -38,9 +34,9 @@
                                     </a>
                                 </div>
                                 <div class="header-navbar-items-SignIn-SignUp">
-                                    <a id="signin" href="customerInfo.php"><div class="header-navbar-items-SignIn"><?php echo $_SESSION['user']['fullname']; ?></div></a>
+                                    <a id="signin" href="?page=customerInfo"><div class="header-navbar-items-SignIn"><?php echo $_SESSION['user']['name']; ?></div></a>
                                     <div class="header-navbar-items-separate"></div>
-                                    <a id="signup" href="signOut.php"><div class="header-navbar-items-SignUp">Đăng xuất</div></a>
+                                    <a id="signup" href="?page=signOut"><div class="header-navbar-items-SignUp">Đăng xuất</div></a>
                                 </div>
                             </div>
                         </li>
@@ -104,15 +100,15 @@
                 <div class="container-bottom">
                     <div class="container-content-left">
                         <div class="container-content-left-user">
-                            <b><?php echo $_SESSION['user']['fullname']; ?></b>
+                            <b><?php echo $_SESSION['user']['name']; ?></b>
                         </div>
                         <div class="container-content-left-userInfo">
                             <i class="fa-regular fa-user"></i>
-                            Thông tin cá nhân
+                            <a href="?page=customerInfo" style="text-decoration: none !important; color: green;">Thông tin cá nhân</a>
                         </div>
                         <div class="container-content-left-order">
                             <i class="fa-regular fa-clipboard"></i>
-                            Lịch sử đơn hàng
+                            <a href="?page=customerOrders" style="text-decoration: none !important; color: green;">Lịch sử đơn hàng</a>
                         </div>
                     </div>
                     <div class="container-content-right">
@@ -129,7 +125,7 @@
                                 </div>
                                 <div class="container-content-right-row3-Orders-product">
                                     <div class="container-content-right-row3-Orders-productImg">
-                                        <img src="../asset/img/book878.jpg" alt="">
+                                        <img src="asset/img/book878.jpg" alt="">
                                     </div>
                                     <div class="container-content-right-row3-Orders-productDetail">
                                         <div class="container-content-right-row3-Orders-productDetail-productName">
@@ -145,7 +141,7 @@
                                             80.000đ
                                         </div>
                                         <div class="container-content-right-row3-Orders-productDetail-detail">
-                                            <a href="">Xem thêm</a>
+                                            <a href="?page=customerOrderDetail">Xem thêm</a>
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +166,7 @@
                                 </div>
                                 <div class="container-content-right-row3-Orders-product">
                                     <div class="container-content-right-row3-Orders-productImg">
-                                        <img src="../asset/img/book878.jpg" alt="">
+                                        <img src="asset/img/book878.jpg" alt="">
                                     </div>
                                     <div class="container-content-right-row3-Orders-productDetail">
                                         <div class="container-content-right-row3-Orders-productDetail-productName">
@@ -186,7 +182,7 @@
                                             80.000đ
                                         </div>
                                         <div class="container-content-right-row3-Orders-productDetail-detail">
-                                            <a href="">Xem thêm</a>
+                                            <a href="?page=customerOrderDetail">Xem thêm</a>
                                         </div>
                                     </div>
                                 </div>
@@ -211,7 +207,7 @@
                                 </div>
                                 <div class="container-content-right-row3-Orders-product">
                                     <div class="container-content-right-row3-Orders-productImg">
-                                        <img src="../asset/img/book878.jpg" alt="">
+                                        <img src="asset/img/book878.jpg" alt="">
                                     </div>
                                     <div class="container-content-right-row3-Orders-productDetail">
                                         <div class="container-content-right-row3-Orders-productDetail-productName">
@@ -227,7 +223,7 @@
                                             80.000đ
                                         </div>
                                         <div class="container-content-right-row3-Orders-productDetail-detail">
-                                            <a href="">Xem thêm</a>
+                                            <a href="?page=customerOrderDetail">Xem thêm</a>
                                         </div>
                                     </div>
                                 </div>
@@ -252,14 +248,14 @@
                 <div class="footer-row2-content">
                     <div class="footer-row2-content-items">
                         <div class="footer-row2-content-items-left1">
-                            <img src="../asset/img/bocongthuong.png" alt="">
+                            <img src="asset/img/bocongthuong.png" alt="">
                         </div>
                         <div class="footer-row2-content-items-left2">
                             WEBSITE CÙNG HỆ THỐNG
                         </div>
                         <div class="footer-row2-content-items-left3"> 
-                            <img class="footer-row2-content-items-left3-img1" src="../asset/img/hotdeal.png" alt="">
-                            <img class="footer-row2-content-items-left3-img2" src="../asset/img/yesgo.png" alt="">
+                            <img class="footer-row2-content-items-left3-img1" src="asset/img/hotdeal.png" alt="">
+                            <img class="footer-row2-content-items-left3-img2" src="asset/img/yesgo.png" alt="">
                         </div>
                     </div>
                     <div class="footer-row2-content-items">

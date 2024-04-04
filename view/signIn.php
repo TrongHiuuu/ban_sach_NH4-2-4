@@ -15,7 +15,7 @@
                 <!-- các elements trên navbar -->
                 <ul class="header-navbar-list">
                     <li class="header-navbar-items">
-                        <a href="home.php"><img src="asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                        <a href="index.php?page=home"><img src="asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                     </li>
                     <li class="header-navbar-items">
                         <div class="header-navbar-items-search">
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                     <div class="signIn-box-row5">
-                        Chưa có tài khoản? <a style="text-decoration: none; color: #0066C0" href="signUp.php">Đăng ký ngay</a>
+                        Chưa có tài khoản? <a style="text-decoration: none; color: #0066C0" href="?page=signUp">Đăng ký ngay</a>
                     </div>
                 </div>
             </ul>

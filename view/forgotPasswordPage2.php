@@ -32,9 +32,9 @@
                                 </a>
                             </div>
                             <div class="header-navbar-items-SignIn-SignUp">
-                                <a id="signin" href="signIn.php"><div class="header-navbar-items-SignIn">Đăng nhập</div></a>
+                                <a id="signin" href="?page=signIn"><div class="header-navbar-items-SignIn">Đăng nhập</div></a>
                                 <div class="header-navbar-items-separate"></div>
-                                <a id="signup" href="signUp.php"><div class="header-navbar-items-SignUp">Đăng ký</div></a>
+                                <a id="signup" href="?page=signUp"><div class="header-navbar-items-SignUp">Đăng ký</div></a>
                             </div>
                         </div>
                     </li>

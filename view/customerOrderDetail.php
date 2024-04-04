@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/1acf2d22a5.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/customerDetailOderCSS.css">
-        <link rel="icon" href="../img/vnbLogo.jpg">
+        <link rel="stylesheet" href="asset/css/customerDetailOderCSS.css">
+        <link rel="icon" href="asset/img/vnbLogo.jpg">
         <title>Chi tiết đơn hàng</title>
     </head>
     <body>
@@ -16,7 +16,7 @@
                     <!-- các elements trên navbar -->
                     <ul class="header-navbar-list">
                         <li class="header-navbar-items">
-                            <a href=""><img src="../img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                            <a href=""><img src="asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                         </li>
                         <li class="header-navbar-items">
                             <div class="header-navbar-items-search">
@@ -104,11 +104,11 @@
                         </div>
                         <div class="container-content-left-userInfo">
                             <i class="fa-regular fa-user"></i>
-                            Thông tin cá nhân
+                            <a href="?page=customerInfo" style="text-decoration: none !important; color: green;">Thông tin cá nhân</a>
                         </div>
                         <div class="container-content-left-order">
                             <i class="fa-regular fa-clipboard"></i>
-                            Lịch sử đơn hàng
+                            <a href="?page=customerOrders" style="text-decoration: none !important; color: green;">Lịch sử đơn hàng</a>
                         </div>
                     </div>
                     <div class="container-content-right">
@@ -138,7 +138,7 @@
                                 <div class="container-content-right-row3-Orders-productList">
                                     <div class="container-content-right-row3-Orders-productOrder">
                                         <div class="container-content-right-row3-Orders-productOrder-img">
-                                            <img src="../img/book878.jpg" alt="">
+                                            <img src="asset/img/book878.jpg" alt="">
                                         </div>
                                         <div class="container-content-right-row3-Orders-productOrder-detail">
                                             <div class="container-content-right-row3-Orders-productOrder-detail-title">
@@ -157,7 +157,7 @@
                                     </div>
                                     <div class="container-content-right-row3-Orders-productOrder">
                                         <div class="container-content-right-row3-Orders-productOrder-img">
-                                            <img src="../img/book878.jpg" alt="">
+                                            <img src="asset/img/book878.jpg" alt="">
                                         </div>
                                         <div class="container-content-right-row3-Orders-productOrder-detail">
                                             <div class="container-content-right-row3-Orders-productOrder-detail-title">
@@ -176,7 +176,7 @@
                                     </div>
                                     <div class="container-content-right-row3-Orders-productOrder">
                                         <div class="container-content-right-row3-Orders-productOrder-img">
-                                            <img src="../img/book878.jpg" alt="">
+                                            <img src="asset/img/book878.jpg" alt="">
                                         </div>
                                         <div class="container-content-right-row3-Orders-productOrder-detail">
                                             <div class="container-content-right-row3-Orders-productOrder-detail-title">
@@ -215,14 +215,14 @@
                 <div class="footer-row2-content">
                     <div class="footer-row2-content-items">
                         <div class="footer-row2-content-items-left1">
-                            <img src="../img/bocongthuong.png" alt="">
+                            <img src="asset/img/bocongthuong.png" alt="">
                         </div>
                         <div class="footer-row2-content-items-left2">
                             WEBSITE CÙNG HỆ THỐNG
                         </div>
                         <div class="footer-row2-content-items-left3"> 
-                            <img class="footer-row2-content-items-left3-img1" src="../img/hotdeal.png" alt="">
-                            <img class="footer-row2-content-items-left3-img2" src="../img/yesgo.png" alt="">
+                            <img class="footer-row2-content-items-left3-img1" src="asset/img/hotdeal.png" alt="">
+                            <img class="footer-row2-content-items-left3-img2" src="asset/img/yesgo.png" alt="">
                         </div>
                     </div>
                     <div class="footer-row2-content-items">

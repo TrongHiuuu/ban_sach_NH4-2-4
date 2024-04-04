@@ -191,7 +191,7 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
                     $mail->Port       = 587; 
 
                     $mail->setFrom('doannhom4.pttkhttt@gmail.com', 'Nhà Sách Vinabook');
-                    $mail->addAddress($_SESSION['reset_password']['username']);
+                    $mail->addAddress($_SESSION['reset_password']['email']);
                     
                     $mail->isHTML(true);
                     $mail->Subject = "Mã xác nhận cho tài khoản Vinabook của bạn";
@@ -231,7 +231,7 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
                 $r_password = $_POST['r_password'];
                 if (!check_password_is_unmatched($password, $r_password)) {
                     $password_hash = password_hash($password, PASSWORD_DEFAULT);
-                    $sql = "UPDATE taikhoan SET matkhau='".$password_hash."'WHERE email='".$_SESSION['reset_password']['username']."' LIMIT 1";
+                    $sql = "UPDATE taikhoan SET matkhau='".$password_hash."'WHERE email='".$_SESSION['reset_password']['email']."' LIMIT 1";
                     $result = mysqli_query($conn, $sql);
         
                     if($result) {
@@ -256,34 +256,42 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
             break;
 
         case 'customerInfo':
-            require "view/customerInfo.php";
+            $sql = "SELECT * FROM taikhoan where email='".$_SESSION['user']['email']."' LIMIT 1";
+            $result = mysqli_query($conn, $sql);
+            $user_info = mysqli_fetch_array($result);
+            require_once "view/customerInfo.php";
             if(isset($_POST['submit_info'])) {
                 $tenTK = $_POST['tenTK'];
                 if (isset($tenTK) && !empty($tenTK)) {
-                    $sql = "UPDATE taikhoan SET tenTK='".$tenTK."' WHERE email='".$_SESSION['user']['username']."' LIMIT 1";
+                    $sql = "UPDATE taikhoan SET tenTK='".$tenTK."' WHERE email='".$_SESSION['user']['email']."' LIMIT 1";
                     $sql_run = mysqli_query($conn, $sql);
                     $notif = 'Thay đổi họ và tên thành công';
+                    //Nếu họ tên được chỉnh sửa, cập nhật lại session user
+                    login_session_set_name($tenTK);
                     echo "<script>alert('{$notif}')</script>";
+                    echo "<meta http-equiv='refresh' content='0'>";
                 }
         
                 $email = $_POST['email'];
                 if (isset($email) && !empty($email)) {
-                    $sql = "UPDATE taikhoan SET email='".$email."' WHERE email='".$_SESSION['user']['username']."' LIMIT 1";
+                    $sql = "UPDATE taikhoan SET email='".$email."' WHERE email='".$_SESSION['user']['email']."' LIMIT 1";
                     $sql_run = mysqli_query($conn, $sql);
                     $notif = 'Thay đổi email thành công';
+                    //Nếu email được chỉnh sửa, cập nhật lại session user
+                    login_session_set_email($email);
                     echo "<script>alert('{$notif}')</script>";
-                    
+                    echo "<meta http-equiv='refresh' content='0'>";
                 }
         
                 $phone = $_POST['phone'];
                 if (isset($phone) && !empty($phone)) {
-                    $sql = "UPDATE taikhoan SET dienthoai='".$phone."' WHERE email='".$_SESSION['user']['username']."' LIMIT 1";
+                    $sql = "UPDATE taikhoan SET dienthoai='".$phone."' WHERE email='".$_SESSION['user']['email']."' LIMIT 1";
                     $sql_run = mysqli_query($conn, $sql);
                     $notif = 'Thay đổi số điện thoại thành công';
                     echo "<script>alert('{$notif}')</script>";
+                    echo "<meta http-equiv='refresh' content='0'>";
                 }
-                login_session($email, $tenTK, $_SESSION['user']['phanquyen']);
-                require "view/customerInfo.php";
+                header("Location:index.php?page=customerInfo");
             }
             if(isset($_POST['submit_password'])) {
                 $c_password = $_POST['c_password'];
@@ -291,14 +299,14 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
                 $r_n_password = $_POST['r_n_password'];
                 
                 if(password_verify($c_password, $user_info['matkhau'])) {
-                    if (!check_password_is_unmatched($n_password, $r_n_password)) {
+                    if (!check_password_is_unmatched($n_password, $r_n_password) && !empty($n_password) && !empty($r_n_password)) {
                         $password_hash = password_hash($n_password, PASSWORD_DEFAULT);
-                        $sql = "UPDATE taikhoan SET matkhau='".$password_hash."' WHERE email='".$_SESSION['user']['username']."' LIMIT 1";
+                        $sql = "UPDATE taikhoan SET matkhau='".$password_hash."' WHERE email='".$_SESSION['user']['email']."' LIMIT 1";
                         $sql_run = mysqli_query($conn, $sql);
                         if($sql_run) {
                             $notif = 'Thay đổi mật khẩu thành công';
                             echo "<script>alert('{$notif}')</script>";
-                            require "view/customerInfo.php";
+                            //require "view/customerInfo.php";
                         }
                         else {
                             $notif = 'Đã có lỗi xảy ra';
@@ -315,6 +323,15 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
                     echo "<script>alert('{$notif}')</script>";
                 }
             }
+            //echo "<meta http-equiv='refresh' content='0'>"; dòng này để đây là bị lỗi
+            break;
+        
+        case 'customerOrders':
+            require_once "view/customerOrders.php";
+            break;
+        
+        case 'customerOrderDetail':
+            require_once "view/customerOrderDetail.php";
             break;
 
         case 'productDetail':

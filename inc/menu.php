@@ -9,7 +9,7 @@
                     <!-- các elements trên navbar -->
                     <ul class="header-navbar-list">
                         <li class="header-navbar-items">
-                            <a href=""><img src="asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                            <a href="index.php?page=home"><img src="asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                         </li>
                         <li class="header-navbar-items">
                             <form action="?page=search" method="post" class="header-navbar-items-search" name="search">
@@ -27,13 +27,13 @@
                                     </a>
                                 </div>
                                 <div class="header-navbar-items-SignIn-SignUp">
-                                    <?php if(empty($_SESSION['user']['fullname'])): ?> 
+                                    <?php if(empty($_SESSION['user']['name'])): ?> 
                                         <a id="signin" href="?page=signIn"><div class="header-navbar-items-SignIn">Đăng nhập</div></a>
                                     <?php else: ?>
-                                        <a id="signin" href="?page=customerInfo"><div class="header-navbar-items-SignIn"><?php echo $_SESSION['user']['fullname'];?></div></a>
+                                        <a id="signin" href="?page=customerInfo"><div class="header-navbar-items-SignIn"><?php echo $_SESSION['user']['name'];?></div></a>
                                     <?php endif ?>
                                     <div class="header-navbar-items-separate"></div>
-                                    <?php if(empty($_SESSION['user']['fullname'])): ?> 
+                                    <?php if(empty($_SESSION['user']['name'])): ?> 
                                         <a id="signup" href="?page=signUp"><div class="header-navbar-items-SignUp">Đăng ký</div></a>
                                     <?php else: ?>
                                         <a id="signin" href="?page=signOut"><div class="header-navbar-items-SignIn">Đăng xuất</div></a>
