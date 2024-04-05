@@ -9,7 +9,7 @@
                     <!-- các elements trên navbar -->
                     <ul class="header-navbar-list">
                         <li class="header-navbar-items">
-                            <a href="index.php?page=home"><img src="asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
+                            <a href="?page=home"><img src="asset/img/vinabookLogo.png" alt="Vinabook-Logo"></a>
                         </li>
                         <li class="header-navbar-items">
                             <form action="?page=search" method="post" class="header-navbar-items-search" name="search">
@@ -21,7 +21,7 @@
                         <li class="header-navbar-items">
                             <div class="header-navbar-items-Cart-SignIn-SignUp">
                                 <div class="header-navbar-items-Cart">
-                                    <a class="cart" href="#">
+                                    <a class="cart" href="?page=cart">
                                         <div class="circle"></div>
                                         <i class="fa-solid fa-cart-shopping"></i>
                                     </a>

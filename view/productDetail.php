@@ -29,10 +29,17 @@
                         </div>
                         <div class="container-bottom-content1-row1-items-priceContent-row3">
                             <div class="container-bottom-content1-row1-items-priceContent-row3-button">
-                                <button onclick="cartNotification()">
+                            <form action="?page=addToCart" method="post">
+                                <input type="hidden" name="idSach" value="<?=$idSach?>">
+                                <input type="hidden" name="img" value="book999.jpg">
+                                <input type="hidden" name="name" value="Hippi - Những Kẻ Lãng Du">
+                                <input type="hidden" name="originalPrice" value="150000">
+                                <input type="hidden" name="salePrice" value="120000">
+                                <button onclick="cartNotification()" type="submit" name="addToCart" class="addToCart-btn" value="themvaogio">
                                     <i class="fa-solid fa-cart-plus"></i>
                                     <strong>Thêm Vào Giỏ Hàng</strong>
                                 </button>
+                            </form>
                             </div>
                         </div>
                     </div>

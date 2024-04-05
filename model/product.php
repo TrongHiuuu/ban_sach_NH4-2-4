@@ -43,35 +43,36 @@ function searchProduct($kyw){
     return getAll($sql);
 }
 
-function searchProductFilter($thingToSearchVal, $priceFrom, $priceTo){
+function filterProductByKeyword($thingToSearchVal, $minPrice, $maxPrice){
     $sql='select * from sach where 1';
     $sql.=' and tonkho > 0';
     $sql.=' and trangthai = 1';
-    $sql.=' and giaban >= '.$priceFrom;
-    $sql.=' and giaban <= '.$priceTo;
-    $sql.=' and tuasach like "%'.$thingToSearchVal.'%"';
-    $sql.=' or tacgia like "%'.$thingToSearchVal.'%"';
+    $sql.=' and giaban >= '.$minPrice;
+    $sql.=' and giaban <= '.$maxPrice;
+    $sql.=' and (tuasach like "%'.$thingToSearchVal.'%"';
+    $sql.=' or tacgia like "%'.$thingToSearchVal.'%")';
     $sql.=' order by luotban';
     return getAll($sql);
 }
 
-function searchProductBestSellerFilter($priceFrom, $priceTo){
+function filterBestsellerProduct($minPrice, $maxPrice){
     $sql='select * from sach where 1';
     $sql.=' and tonkho > 0';
     $sql.=' and luotban > 0';
     $sql.=' and trangthai = 1';
-    $sql.=' and giaban >= '.$priceFrom;
-    $sql.=' and giaban <= '.$priceTo;
+    $sql.=' and giaban >= '.$minPrice;
+    $sql.=' and giaban <= '.$maxPrice;
     $sql.=' order by luotban';
+    return getAll($sql);
 }
 
-function searchProductByCategoryFilter($thingToSearchVal, $priceFrom, $priceTo){
+function filterCategoryProduct($thingToSearchVal, $minPrice, $maxPrice){
     $sql='select * from sach where 1';
     $sql.=' and tonkho > 0';
     $sql.=' and trangthai = 1';
     $sql.=' and idTL = '.$thingToSearchVal;
-    $sql.=' and giaban >= '.$priceFrom;
-    $sql.=' and giaban <= '.$priceTo;
+    $sql.=' and giaban >= '.$minPrice;
+    $sql.=' and giaban <= '.$maxPrice;
     $sql.=' order by luotban';
     return getAll($sql);
 }

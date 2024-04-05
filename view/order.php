@@ -9,14 +9,14 @@
         <div class="container-content-left-user">
             <b>VYLE</b>
         </div>
-        <div class="container-content-left-userInfo">
+        <a class="container-content-left-userInfo">
             <i class="fa-regular fa-user"></i>
             Thông tin cá nhân
-        </div>
-        <div class="container-content-left-order">
+        </a>
+        <a href="?page=order" class="container-content-left-order">
             <i class="fa-regular fa-clipboard"></i>
             Lịch sử đơn hàng
-        </div>
+        </a>
     </div>
     <div class="container-content-right">
         <div class="container-content-right-row3"> <!-- productList -->

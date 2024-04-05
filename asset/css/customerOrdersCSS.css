@@ -349,6 +349,9 @@ ul li {
     margin-bottom: 15px;
     font-size: 14px;
     cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: black;
 }
 
 .container-content-left-userInfo i {
@@ -366,6 +369,9 @@ ul li {
     font-size: 14px;
     cursor: pointer;
     margin-bottom: 15px;
+    display: block;
+    text-decoration: none;
+    color: black;
 }
 
 .container-content-left-order:hover {
@@ -549,3 +555,17 @@ ul li {
     color: #333;
 }
 /*--------------------------------------------*/
+/* notification */
+.container-content-right-row3 .notification{
+    text-align: center;
+    font-size: 20px;
+}
+
+.notification i{
+    font-size: 30px;
+    color: green;
+}
+
+.notification div{
+    margin-top: 5px;
+}

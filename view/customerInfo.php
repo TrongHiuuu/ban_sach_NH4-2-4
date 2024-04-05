@@ -103,7 +103,7 @@
                 <div class="container-bottom">
                     <div class="container-content-left">
                         <div class="container-content-left-user">
-                            <b><?php echo $_SESSION['user']['name'];?></b>
+                            <b><?php echo $user_info['tenTK'];?></b>
                         </div>
                         <div class="container-content-left-userInfo">
                             <i class="fa-regular fa-user"></i>

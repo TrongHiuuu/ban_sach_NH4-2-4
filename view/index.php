@@ -5,7 +5,7 @@ require 'model/product.php';
 require 'model/category.php';
 require 'model/order.php';
 include 'lib/session.php';
-require "model/customer.php";
+include "model/customer.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -343,8 +343,10 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
                 if (isset($tenTK) && !empty($tenTK)) {
                     $sql = "UPDATE taikhoan SET tenTK='".$tenTK."' WHERE email='".$_SESSION['user']['email']."' LIMIT 1";
                     $sql_run = mysqli_query($conn, $sql);
+                    $notif = 'Thay đổi họ và tên thành công';
                     //Nếu họ tên được chỉnh sửa, cập nhật lại session user
                     login_session_set_name($tenTK);
+                    echo "<script>alert('{$notif}')</script>";
                     echo "<meta http-equiv='refresh' content='0'>";
                 }
         
@@ -352,8 +354,10 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
                 if (isset($email) && !empty($email)) {
                     $sql = "UPDATE taikhoan SET email='".$email."' WHERE email='".$_SESSION['user']['email']."' LIMIT 1";
                     $sql_run = mysqli_query($conn, $sql);
+                    $notif = 'Thay đổi email thành công';
                     //Nếu email được chỉnh sửa, cập nhật lại session user
                     login_session_set_email($email);
+                    echo "<script>alert('{$notif}')</script>";
                     echo "<meta http-equiv='refresh' content='0'>";
                 }
         
@@ -361,6 +365,8 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
                 if (isset($phone) && !empty($phone)) {
                     $sql = "UPDATE taikhoan SET dienthoai='".$phone."' WHERE email='".$_SESSION['user']['email']."' LIMIT 1";
                     $sql_run = mysqli_query($conn, $sql);
+                    $notif = 'Thay đổi số điện thoại thành công';
+                    echo "<script>alert('{$notif}')</script>";
                     echo "<meta http-equiv='refresh' content='0'>";
                 }
                 header("Location:index.php?page=customerInfo");
@@ -378,6 +384,7 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
                         if($sql_run) {
                             $notif = 'Thay đổi mật khẩu thành công';
                             echo "<script>alert('{$notif}')</script>";
+                            //require "view/customerInfo.php";
                         }
                         else {
                             $notif = 'Đã có lỗi xảy ra';
@@ -394,83 +401,10 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
                     echo "<script>alert('{$notif}')</script>";
                 }
             }
+            //echo "<meta http-equiv='refresh' content='0'>"; dòng này để đây là bị lỗi
             break;
 
         // Hieu toi day ne
-        case 'cart':
-            require_once "view/cart.php";
-
-        //Xóa một sản phẩm trong giỏ hàng
-        if(isset($_GET['index']) && ($_GET['index'] >= 0)) {
-            array_splice($_SESSION['cart'], $_GET['index'], 1); //xóa phần tử thứ index khỏi mảng
-        }
-
-        //Cập nhật số lượng sản phẩm
-        if(isset($_POST['pro_index']) && isset($_POST['quantity'])) {
-            $pro_index = $_POST['pro_index'];
-            $newQty = $_POST['quantity'];
-
-            $_SESSION['cart'][$pro_index][5] = $newQty;
-            $totalQty = count($_SESSION['cart']);
-            $totalPrice = 0;
-            if(isset($_SESSION['cart'])) {
-                $i = 0;
-                foreach ($_SESSION['cart'] as $item) {
-                    $totalPrice += $item[4] * $item[5];
-                }
-            }
-
-            echo json_encode(array('status' => 'success', 'totalQty' => $totalQty, 'totalPrice' => number_format($totalPrice, 0, ',', '.')." VNĐ"));
-            exit();
-        }
-            break;
-
-        case 'addToCart':
-
-        if(isset($_POST['addToCart'])) {
-            $id = $_POST['idSach'];
-            $img = $_POST['img'];
-            $name = $_POST['name'];
-            $originalPrice = $_POST['originalPrice'];
-            $salePrice = $_POST['salePrice'];
-            //Nếu trong trang productDetail có input để nhập số lượng sản phẩm
-            if(isset($_POST['qty']) && ($_POST['qty'] > 0)) {
-                $qty = $_POST['qty'];
-            }
-            else {
-                $qty = 1;
-            }
-            $isExists = 0;
-            
-            // $tmp = array(2, "book878.jpg", "Đám Trẻ Ở Đại Dương Đen", 150000, 135000, 1);
-            // array_push($_SESSION['cart'], $tmp);
-
-            //Kiểm tra sản phẩm có tồn tại trong giỏ hàng hay không?
-            //Nếu có thì chỉ cập nhật lại số lượng
-            $i = 0;
-            foreach ($_SESSION['cart'] as $item) {
-                if($item[2] === $name) {    //Chỉnh sửa: so sánh id thay vì tên
-                    //cập nhật trực tiếp trên giỏ hàng
-                    $qty_new = $qty + $item[5];
-                    $_SESSION['cart'][$i][5] = $qty_new;
-                    $isExists = 1;
-                    break;
-                }
-                $i++;
-            }
-            //Nếu không thì thêm một sản phẩm mới
-            if($isExists == 0) {
-                $product = array($id, $img, $name, $originalPrice, $salePrice, $qty);
-                if(!isset($_SESSION['cart'])) {
-                    $_SESSION['cart'] = array();
-                }
-                array_push($_SESSION['cart'], $product);
-                
-            }
-            
-            header("location: cart.php");
-        }
-            break;
         
         default:
         $result = getLimitProductBestSeller(12);
