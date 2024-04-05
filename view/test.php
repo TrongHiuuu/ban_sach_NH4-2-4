@@ -1,3 +1,4 @@
 <?php
-    session_unset();
+    $str = 'Thống kê';
+    echo strlen($str)."   ".mb_strlen($str);
 ?>

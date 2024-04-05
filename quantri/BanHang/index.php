@@ -11,7 +11,9 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
             $result = getAllCustomer();
             require_once '../view/customer.php';
             break;
-            
+        case 'TKDoanhThu':
+            require_once '../view/TKDoanhThu.php';
+            break;
         default:
         //require homepage
         $result = getAllCustomer();
