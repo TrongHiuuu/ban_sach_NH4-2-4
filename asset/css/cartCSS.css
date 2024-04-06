@@ -13,6 +13,12 @@ a {
 a:hover {
     color: #000080;
 }
+
+.disabled {
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+    opacity: 0.5;
+}
 /*--------------------------------------------*/
 /* phần này css navbar*/
 .header-navbar-list {
@@ -135,136 +141,6 @@ a:hover {
 }
 /*--------------------------------------------*/
 /* CONTAINER */
-
-
-.container-top-book-catalogue {
-    width: 100%;
-    height: 45px;
-    background-color: #057A45;
-    display: block;
-}
-
-.container-top-book-catalogue-content {
-    width: 1080px;
-    margin: auto;
-    padding-top: 13px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.container-top-book-catalogue-content-left {
-    display: flex;
-    cursor: pointer;
-    margin-left: 5px;
-}
-
-.container-top-book-catalogue-content-left p {
-    font-size: 15px;
-    color: #fff;
-}
-
-.container-top-book-catalogue-content-left i {
-    font-size: 20px;
-    color: #fff;
-    margin-right: 10px;
-}
-
-.container-top-book-catalogue-content-right {
-    display: flex;
-}
-
-.container-top-book-catalogue-content-right p {
-    font-size: 12px;
-    color: #fff;
-    margin-top: 4px;
-}
-
-.container-top-book-catalogue-content-right i {
-    font-size: 15px;
-    color: #fff;
-    margin-right: 5px;
-}
-
-/* Phần này css Banner với Drop-down List */
-/*-------------------------------*/
-/* Phần này css drop-down List*/
-.container-top-dropDownList-and-banner {
-    width: 1080px;
-    margin: auto;
-    display: flex;
-}
-
-.container-top-dropDownList-and-banner-left {
-    flex: 25%;
-    border: 1px solid #A9A9A9;
-    background-color: #fff;
-    height: 100%;
-    padding-bottom: 5px;
-}
-
-.container-top-dropDownList-and-banner-right {
-    flex: 80%;
-}
-
-.container-top-dropDownList-and-banner-left-list-items {
-    padding: 5px;
-    border-top: 0.5px solid #ECECEC;
-    font-size: 12.5px;
-    color: #383838;
-}
-
-.container-top-dropDownList-and-banner-left-list-items-text {
-    margin-left: 10px;
-    margin-top: 5px;
-}
-
-.dropbtn {
-    color: white;
-    font-size: 16px;
-    position: relative;
-    display: block;
-    cursor:pointer;
-}
-
-.container-top-book-catalogue-content-left-dropdown {
-    position: relative;
-    display: inline-block;
-}
- 
-.container-top-book-catalogue-content-left-dropdown i {
-    font-size: 17px;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 240px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 7px 0px;
-    text-decoration: none;
-    display: block;
-}
-  
-.dropcheck {
-      position: absolute;
-      left: -9999px;
-}
-
-.dropcheck:checked ~ .dropdown-content {
-    display: block;
-    margin-top: 15px;
-}
-
-.dropdown-content ul li {
-    list-style: none;
-}
-
-/*-------------------------------------------------*/
 .container {
     margin: auto;
     width: 1080px;
@@ -311,24 +187,38 @@ a:hover {
     display: flex;
 }
 
-.container-row2-left-productList-productCard-row2-items1-detail {
-    
+.container-row2-left-productList-productCard-row2-items1-detail4 {
+    margin-top: 10px;
 }
 
-.container-row2-left-productList-productCard-row2-items1-detail4 button {
+.container-row2-left-productList-productCard-row2-items1-detail4 .qty-form {
     width: 25px;
-    height: 20px;
-    font-size: 10px;
-    
+    height: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #117c47;
+    border-radius: 5px;
+    color: #000;
+    background-color: #fff;
 }
 
-.number {
-    background-color: #eeeeee;
-    padding: 2px 10px;
-    border-radius: 3px;
+.container-row2-left-productList-productCard-row2-items1-detail4 .qty-form:hover {
+    border: none;
+    background-color: #117c47;
+    color: white;
+    cursor: pointer;
+}
+
+.container-row2-left-productList-productCard-row2-items1-detail4 .input-qty {
+    font-size: 14px;
+    border-radius: 5px;
+    display: inline-block;
+    width: 40px;
+    height: 25px;
+    text-align: center;
+    outline: none;
+    border: 1px solid #ddd;
     margin: 0 5px;
-    color: #66645c;
-    font-size: 12px;
 }
 
 .container-row2-left-productList-productCard-row2-items1-detail2 {
@@ -337,18 +227,26 @@ a:hover {
 }
 
 .container-row2-left-productList-productCard-row2-items1-detail3 {
-    font-size: 13.5px;
+    font-size: 16px;
     color: #66645c;
 }
 
 .container-row2-left-productList-productCard-row2 {
     margin-top: 20px;
+}
+
+.container-row2-left-productList-productCard-row2-items {
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
 
 .container-row2-left-productList-productCard-row2-items2 {
     color: #66645c;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .container-row2-left-productList-productCard-row2-items2 button {
@@ -403,6 +301,12 @@ a:hover {
     font-size: 14px;
 }
 
+.container-row2-right-row2-total-right .total-price {
+    font-size: 18px;
+    color: #f6001a;
+    font-weight: 600;
+}
+
 .container-row3 {
     display: flex;
     justify-content: center;
@@ -421,6 +325,11 @@ a:hover {
     margin-right: 20px;
 }
 
+.container-row3-backButton button:hover {
+    background-color: #117c47;
+}
+
+
 .container-row3-paymentButton button {
     font-size: 17px;
     padding: 10px 60px;
@@ -428,11 +337,41 @@ a:hover {
     background-color: #fdc92d;
     border: none;
     border-radius: 5px;
+}
+
+.container-row3-paymentButton button:hover {
+    color: #fdc92d;
+    background-color: #000;
     cursor: pointer;
 }
 
 .container-row2-left-productList-productCard-row2-items2-quantityPrice {
     font-size: 13px;
+}
+
+.container-row2-left-productList-productCard-row2-items2-quantityPrice .product-price {
+    font-size: 16px;
+    color: #f6001a;
+    font-weight: 600;
+}
+
+.empty-cart-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-cart-container .empty-cart-img {
+    margin-bottom: 20px;
+    width: 150px;
+}
+
+.empty-cart-container .empty-cart-header {
+    color: #1e3050;
+    font-size: 24px;
 }
 /*--------------------------------------------*/
 /*--------------------------------------------*/

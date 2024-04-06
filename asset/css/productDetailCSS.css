@@ -187,7 +187,7 @@ a {
 /*--------------------------------------------*/
 /* Phần này CSS container bottom*/
 .container-bottom {
-    padding-bottom: 100px;
+    height: 1100px;
     width: 1000px;
     margin: auto;
     display: flex;
@@ -196,29 +196,33 @@ a {
 
 .container-bottom-content1-row1 {
     display: flex;
-    padding-top: 60px;
-    padding-bottom: 40px;
+    margin-top: 50px;
+    border-top: 1px solid #CCCCCC;
+    padding-top: 40px;
+    padding-bottom: 80px;
     border-bottom: 1px dashed #CCCCCC;
 }
 
 .container-bottom-content1-row1-left {
-    flex: 20%;
+    flex: 15%;
+    margin-right: 40px;
 }
 
 .container-bottom-content1-row1-middle {
-    flex: 80%;
-    padding-left: 30px;
+    flex: 55%;
+    padding-right: 40px;
 }
 
+.container-bottom-content1-row1-right {
+    flex: 30%;
+}
 .container-bottom-content1-row1-left img {
     width: 220px;
-    /* height: 320px; */
     box-shadow: 3px 5px 10px #808080;
 }
 
 .container-bottom-content1-row1-items-text1 {
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 24px;
     margin-bottom: 8px;
 }
 
@@ -227,11 +231,39 @@ a {
     margin-bottom: 5px;
 }
 
+.container-bottom-content1-row1-items-text3 {
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    color: #666471;
+}
+
+.container-bottom-content1-row1-items-hr {
+    border: 0.2px dashed #CCCCCC;
+}
+
+.container-bottom-content1-row1-items-text5 {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.container-bottom-content1-row1-items-text6 i{
+    color: #057A45;
+}
+
+.container-bottom-content1-row1-items-text6 {
+    margin-left: 10px;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
 .container-bottom-content1-row1-items-price {
     width: 100%;
     height: 90%;
+    border: 5px solid #E8E8E8;
+    border-radius: 5px;
     position: relative;
-    border: none;
 }
 
 .container-bottom-content1-row1-items-priceContent {
@@ -249,29 +281,10 @@ a {
     border-bottom: 0.5px dashed #CCCCCC;
 }
 
-.list-price .discount{
-    color: #666471;
-    text-decoration: line-through;
-}
-
-.list-price{
+.list-price {
     display: flex;
-    align-items: center;
-}
-
-.list-price .new-price{
-    color: red;
-    font-weight: 500;
-    font-size: 30px;
-    margin-right: 10px;
-}
-
-
-.list-price .old-price{
-    color: #66645C;
-    font-weight: 400;
-    font-size: 20px;
-    text-decoration: line-through;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .float-left {
@@ -300,6 +313,7 @@ a {
 
 .container-bottom-content1-row1-items-priceContent-row3 {
     display: block;
+    float: left;
     margin-top: 12px;
 }
 
@@ -320,7 +334,8 @@ a {
     margin-left: 5px;
 }
 
-.container-bottom-content1-row1-items-priceContent-row3-button button{
+.container-bottom-content1-row1-items-priceContent-row3-button .addToCart-btn{
+    display: inline-block;
     background-color: #FFC705;
     transition: 0.3s;
     border: 2px solid #E1AF04;
@@ -364,11 +379,6 @@ a {
     margin-bottom: 10px;
 }
 
-.container-bottom-content1-row2-content-text2{
-    width: 800px;
-    word-wrap: break-word
-}
-
 .container-bottom-content1-row2-content-text3 {
     font-size: 12px;
     margin-top: 15px;
@@ -395,141 +405,10 @@ a {
     margin-bottom: 10px;
 }
 
-
-
-.container-top-book-catalogue {
-    width: 100%;
-    height: 45px;
-    background-color: #057A45;
-    display: block;
-}
-
-.container-top-book-catalogue-content {
-    width: 1080px;
-    margin: auto;
-    padding-top: 13px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.container-top-book-catalogue-content-left {
-    display: flex;
-    cursor: pointer;
-    margin-left: 5px;
-}
-
-.container-top-book-catalogue-content-left p {
-    font-size: 15px;
-    color: #fff;
-}
-
-.container-top-book-catalogue-content-left i {
-    font-size: 20px;
-    color: #fff;
-    margin-right: 10px;
-}
-
-.container-top-book-catalogue-content-right {
-    display: flex;
-}
-
-.container-top-book-catalogue-content-right p {
-    font-size: 12px;
-    color: #fff;
-    margin-top: 4px;
-}
-
-.container-top-book-catalogue-content-right i {
-    font-size: 15px;
-    color: #fff;
-    margin-right: 5px;
-}
-
-/* Phần này css Banner với Drop-down List */
-/*-------------------------------*/
-/* Phần này css drop-down List*/
-.container-top-dropDownList-and-banner {
-    width: 1080px;
-    margin: auto;
-    display: flex;
-}
-
-.container-top-dropDownList-and-banner-left {
-    flex: 25%;
-    border: 1px solid #A9A9A9;
-    background-color: #fff;
-    height: 100%;
-    padding-bottom: 5px;
-}
-
-.container-top-dropDownList-and-banner-right {
-    flex: 80%;
-}
-
-.container-top-dropDownList-and-banner-left-list-items {
-    padding: 5px;
-    border-top: 0.5px solid #ECECEC;
-    font-size: 12.5px;
-    color: #383838;
-}
-
-.container-top-dropDownList-and-banner-left-list-items-text {
-    margin-left: 10px;
-    margin-top: 5px;
-}
-
-.dropbtn {
-    color: white;
-    font-size: 16px;
-    position: relative;
-    display: block;
-    cursor:pointer;
-}
-
-.container-top-book-catalogue-content-left-dropdown {
-    position: relative;
-    display: inline-block;
-}
- 
-.container-top-book-catalogue-content-left-dropdown i {
-    font-size: 17px;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 240px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 7px 0px;
-    text-decoration: none;
-    display: block;
-}
-  
-.dropcheck {
-      position: absolute;
-      left: -9999px;
-}
-
-.dropcheck:checked ~ .dropdown-content {
-    display: block;
-    margin-top: 15px;
-}
-
-ul li {
-    list-style: none;
-}
-
 /*--------------------------------------------*/
 /*------------ CONTAINER (FINISHING) ------------*/
 /*--------------------------------------------*/
-/*--------------------------------------------*/
 /* phần này css Footer */
-
 .footer-row2 {
     background-color: #ECECEC;
     height: 200px;

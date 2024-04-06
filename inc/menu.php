@@ -1,5 +1,5 @@
 <?php
-    extract($category);
+   extract($category);
 ?>
 <body>
         <div class="website">
@@ -38,7 +38,6 @@
                                     <?php else: ?>
                                         <a id="signin" href="?page=signOut"><div class="header-navbar-items-SignIn">Đăng xuất</div></a>
                                     <?php endif ?>
-                                    
                                 </div>
                             </div>
                         </li>

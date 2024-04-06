@@ -1,6 +1,8 @@
-<?
-    include_once "../inc/header_home.php";
+<?php
+    include_once "inc/header_home.php";
+    extract($result);
 ?>
+<link rel="stylesheet" href="asset/css/cartCSS.css">
            <section class="container">
                 <div class="container-row1">
                     <strong>GIỎ HÀNG</strong>
@@ -17,7 +19,7 @@
                                         if(isset($_SESSION['cart']) && (count($_SESSION['cart']) > 0)) {
                                             $i = 0; //biến dùng để lưu index của sản phẩm trong giỏ hàng
                                             foreach ($_SESSION['cart'] as $item) {
-                                                $linkdel = "cart.php?delcart=true&index=".$i;
+                                                $linkdel = "index.php?page=cart?delcart=true&index=".$i;
                                                 echo '
                                                     <div class="container-row2-left-productList-productCard-row2-items">
                                                         <div class="container-row2-left-productList-productCard-row2-items1">
@@ -58,7 +60,7 @@
                                         else {
                                             echo '
                                             <div class="empty-cart-container">
-                                                <img src="../img/empty-cart.png" alt="Giỏ hàng trống" class="empty-cart-img">
+                                                <img src="asset/img/empty-cart.png" alt="Giỏ hàng trống" class="empty-cart-img">
                                                 <h2 class="empty-cart-header">Không có sản phẩm nào trong giỏ hàng</h2>
                                             </div>
                                             ';
@@ -124,12 +126,12 @@
                 </div>
                 <div class="container-row3">
                     <div class="container-row3-backButton">
-                        <button class="exit-cart-btn" onclick="window.location.href = 'productDetail.php'">QUAY LẠI</button>
+                        <button class="exit-cart-btn" onclick="window.location.href = '?page=home'">QUAY LẠI</button>
                     </div>
                     <div class="container-row3-paymentButton">
                         <?php
                             if(isset($_SESSION['cart'])) {
-                                echo '<button class="checkout-btn" onclick="window.location.href = \'checkout.php\'">THANH TOÁN</button>';
+                                echo '<button class="checkout-btn" onclick="window.location.href = \'?page=checkOut\'">THANH TOÁN</button>';
                             }
                             else {
                                 echo '<button class="checkout-btn disabled">THANH TOÁN</button>';
@@ -139,39 +141,7 @@
                 </div>
             </section>
         </div>
-    </body>
-    <footer class="footer">
-        <div class="footer-row">
-            <div class="footer-row2">
-                <div class="footer-row2-content">
-                    <div class="footer-row2-content-items">
-                        <div class="footer-row2-content-items-left1">
-                            <img src="../img/bocongthuong.png" alt="">
-                        </div>
-                        <div class="footer-row2-content-items-left2">
-                            WEBSITE CÙNG HỆ THỐNG
-                        </div>
-                        <div class="footer-row2-content-items-left3"> 
-                            <img class="footer-row2-content-items-left3-img1" src="../img/hotdeal.png" alt="">
-                            <img class="footer-row2-content-items-left3-img2" src="../img/yesgo.png" alt="">
-                        </div>
-                    </div>
-                    <div class="footer-row2-content-items">
-                        <div class="footer-row2-content-items-right1">
-                            CÔNG TY CỔ PHẦN THƯƠNG MẠI DỊCH VỤ MÊ KÔNG COM
-                        </div>
-                        <div class="footer-row2-content-items-right2">
-                            Địa chỉ: Tiểu Vương Quốc Bình Chánh <br>
-                            MST: 0303615027 do Sở Kế Hoạch Và Đầu Tư Tp.HCM cấp ngày 10/03/2011 <br>
-                            Tel: 028.73008182 - Fax: 028.39733234 - Email: <a style="text-decoration: none; color: #0066C0" href="">hotro@vinabook.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../js/cart.js"></script>
 <?php
-    include_once "../inc/footer.php";
+    include "inc/footer.php";
 ?>
+    
