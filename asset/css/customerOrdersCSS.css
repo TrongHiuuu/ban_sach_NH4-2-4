@@ -343,15 +343,16 @@ ul li {
     padding-right: 15px;
 }
 
+.container-content-left-user {
+    float: right;
+}
+
 .container-content-left-userInfo {
     margin-top: 20px;
     float: left;
     margin-bottom: 15px;
     font-size: 14px;
     cursor: pointer;
-    display: block;
-    text-decoration: none;
-    color: black;
 }
 
 .container-content-left-userInfo i {
@@ -369,9 +370,6 @@ ul li {
     font-size: 14px;
     cursor: pointer;
     margin-bottom: 15px;
-    display: block;
-    text-decoration: none;
-    color: black;
 }
 
 .container-content-left-order:hover {
@@ -425,12 +423,8 @@ ul li {
     border-radius: 5px;
 }
 
-.container-content-right-row3-Orders-status-item2 .green{
+.container-content-right-row3-Orders-status-item2 {
     color: #057A45;
-}
-
-.container-content-right-row3-Orders-status-item2 .red{
-    color: red;
 }
 
 .container-content-right-row3-Orders-status-item2 i {
@@ -446,12 +440,6 @@ ul li {
 
 .container-content-right-row3-Orders-productDetail {
     padding-left: 15px;
-}
-
-.container-content-right-row3-Orders-productDetail .error{
-    padding-left: 15px;
-    color: red;
-    background-color: lightcoral; 
 }
 
 .container-content-right-row3-Orders-productDetail-productName {
@@ -555,17 +543,3 @@ ul li {
     color: #333;
 }
 /*--------------------------------------------*/
-/* notification */
-.container-content-right-row3 .notification{
-    text-align: center;
-    font-size: 20px;
-}
-
-.notification i{
-    font-size: 30px;
-    color: green;
-}
-
-.notification div{
-    margin-top: 5px;
-}

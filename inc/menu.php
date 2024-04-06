@@ -2,7 +2,7 @@
    extract($category);
 ?>
 <body>
-        <div class="website">
+<link rel="stylesheet" href="asset/css/searchingPageCSS.css">
             <!-- phần header có navbar -->
             <header class="header">
                 <nav class="header-navbar">
@@ -44,8 +44,7 @@
                     </ul>
                 </nav>
             </header>
-            <section class="container">
-                <section class="container-top">
+            <section class="container-top">
                     <div class="container-top-book-catalogue">
                         <div class="container-top-book-catalogue-content">
                             <div class="container-top-book-catalogue-content-left-dropdown">
@@ -81,3 +80,4 @@
                         </div>
                     </div>
                 </section>
+               

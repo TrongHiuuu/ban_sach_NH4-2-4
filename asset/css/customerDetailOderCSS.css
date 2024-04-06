@@ -295,15 +295,16 @@ ul li {
     padding-right: 15px;
 }
 
+.container-content-left-user {
+    float: right;
+}
+
 .container-content-left-userInfo {
     margin-top: 20px;
     float: left;
     margin-bottom: 15px;
     font-size: 14px;
     cursor: pointer;
-    display: block;
-    text-decoration: none;
-    color: black;
 }
 
 .container-content-left-userInfo i {
@@ -321,9 +322,6 @@ ul li {
     font-size: 14px;
     cursor: pointer;
     margin-bottom: 15px;
-    display: block;
-    text-decoration: none;
-    color: black;
 }
 
 .container-content-left-order:hover {
@@ -358,20 +356,6 @@ ul li {
     border-radius: 3px;
     color: #333;
     font-size: 12px;
-}
-
-.container-content-right-row3 form{
-    display: block;
-    float: right;
-    margin-top: 4px;
-}
-
-.container-content-right-row3 form button{
-    padding: 3px;
-    background-color: lightpink;
-    color: black;
-    font-weight: 600;
-    cursor: pointer;
 }
 
 .container-content-right-row3-Orders-status {
@@ -415,15 +399,12 @@ ul li {
     color: #333;
     padding-bottom: 5px;
 }
-.container-content-right-row3-Orders-customerInfo div{
-    font-size: 15px;
+.container-content-right-row3-Orders-customerInfo {
+    font-size: 12px;
     color: #696969;
-    margin-top: 3px;
 }
 
 .container-content-right-row3-Orders-productOrder {
-    display: block;
-    text-decoration: none;
     margin-top: 10px;
 }
 
@@ -436,10 +417,6 @@ ul li {
 
 .container-content-right-row3-Orders-productOrder {
     display: flex;
-}
-
-.container-content-right-row3-Orders-productOrder .error{
-    background-color: lightcoral;
 }
 
 .container-content-right-row3-Orders-productList {
@@ -455,9 +432,7 @@ ul li {
 
 .container-content-right-row3-Orders-productOrder-detail-title {
     margin-bottom: 3px;
-    font-size: 16px;
-    color: black;
-    font-weight: 600;
+    font-size: 15px;
 }
 
 .container-content-right-row3-Orders-productOrder-detail-author {
@@ -472,7 +447,6 @@ ul li {
 
 .container-content-right-row3-Orders-productOrder-detail-price {
     margin-top: 10px;
-    color: black;
 }
 
 .container-content-right-row3-Orders-productOrder-totalPrice {

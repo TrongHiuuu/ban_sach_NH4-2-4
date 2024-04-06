@@ -264,7 +264,6 @@ ul li {
     color: #383838;
 }
 
-
 .container-bottom-right-content {
     margin-top: 70px;
 }
@@ -285,23 +284,14 @@ ul li {
 }
 
 /* start: product */
+
 .container-bottom-right-content-bottom-product {
-    display: block;
-    text-decoration: none;
     width: 145px;
     padding: 10px;
     cursor: pointer;
-    background-color: #fff;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
 }
 
 .container-bottom-right-content-bottom-product img {
-    display: block;
     width: 100px;
     height: 150px;
     margin-bottom: 7px;
@@ -318,24 +308,12 @@ ul li {
 .container-bottom-right-content-bottom-product-text1 {
     font-size: 13px;
     margin-bottom: 7px;
-    width: 120px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .container-bottom-right-content-bottom-product-text2 {
     font-size: 10px;
     color: #696969;
     margin-bottom: 7px;
-    width: 120px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.container-bottom-right-content-bottom-product-text2 .luotban{
-    color: #057A45;
 }
 
 .container-bottom-right-content-bottom-product-price {
@@ -343,14 +321,8 @@ ul li {
     font-size: 14px;
     margin-bottom: 7px;
 }
+/* end: product */
 
-.discount{
-    text-decoration: line-through;
-    color: #666665;
-}
-/* start: product */
-
-/* start: price filter */
 .container-bottom-left-filter-price-range i{
     font-size: 12px;
     color: #383838;
@@ -368,25 +340,11 @@ ul li {
     width: 100px;
     height: 25px;
     padding: 5px;
-    border: 1px solid black;
+    border: none;
+    background-color: #ECECEC;
     border-radius: 3px;
+    color: #696969;
 }
-
-.container-bottom-left-filter-price-range button{
-    display: block;
-    padding: 5px;
-    font-size: 15px;
-    background-color: #057A45;
-    color: white;
-    border-radius: 3px;
-    margin: 10px auto;
-}
-
-.container-bottom-left-filter-price-range .alert{
-    color: red;
-}
-
-/* end: price filter */
 
 .container-bottom-left-filter-category-content a {
     text-decoration: none;

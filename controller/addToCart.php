@@ -40,6 +40,6 @@
             
         }
         
-        header("location: cart.php");
+        header("Location:index.php?page=cart");
     }
 ?>

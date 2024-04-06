@@ -4,6 +4,7 @@ include 'lib/connect.php';
 require 'model/product.php';
 require 'model/category.php';
 require 'model/order.php';
+require 'model/cart.php';
 include 'lib/session.php';
 require "model/customer.php";
 
@@ -85,6 +86,11 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
 
         case 'checkOut':
             require_once "controller/checkOut.php";
+            break;
+        
+        case 'orderConfirm':
+            require_once "controller/orderConfirm.php";
+            break;
 
         default:
             require "controller/home.php";

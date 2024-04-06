@@ -1,6 +1,4 @@
-</div>
-</section>
-</body>    
+    </body>    
     <footer class="footer">
         <div class="footer-row">
             <div class="footer-row1"></div>
@@ -34,7 +32,5 @@
             </div>
         </div>
     </footer>
-    
     <script src="asset/js/script.js"></script>
-
 </html>

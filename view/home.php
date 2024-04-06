@@ -2,7 +2,7 @@
     include_once 'inc/header_home.php';
     extract($result);
 ?>
-<link rel="stylesheet" href="asset/css/homePage1CSS.css"> 
+<link rel="stylesheet" href="asset/css/homePageCSS.css"> 
 <section class="container-bottom">
     <div class="container-bottom-content1">
         <div class="container-bottom-content1-banner">
