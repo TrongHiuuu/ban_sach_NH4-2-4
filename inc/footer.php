@@ -1,4 +1,5 @@
 </div>
+</section>
 </body>    
     <footer class="footer">
         <div class="footer-row">
