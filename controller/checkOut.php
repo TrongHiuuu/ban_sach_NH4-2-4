@@ -7,14 +7,15 @@
 
         //insert đơn hàng vào database
         $idTK = $_SESSION['user']['id'];
-        $sql = "INSERT INTO donhang (idTK, diachigiao, tongtien)
-                VALUES (?, ?, ?) 
+        $trangthai = "CHO";
+        $sql = "INSERT INTO donhang (idTK, diachigiao, tongtien, trangthai)
+                VALUES (?, ?, ?, ?) 
         ";
 
         $stmt = mysqli_stmt_init($conn);
         $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
         if($prepareStmt) {  
-            mysqli_stmt_bind_param($stmt, "sss", $idTK, $diachinhan, $tongtien);
+            mysqli_stmt_bind_param($stmt, "ssss", $idTK, $diachinhan, $tongtien, $trangthai);
             mysqli_stmt_execute($stmt);
         }
         $orderID = mysqli_insert_id($conn);
