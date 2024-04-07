@@ -7,7 +7,7 @@
         $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
         if (mysqli_num_rows($result) > 0) {
             if(password_verify($inputPassword, $user['matkhau'])){
-                login_session($user['email'], $user['tenTK'], $user['phanquyen']);
+                login_session($user['idTK'], $user['email'], $user['tenTK'], $user['phanquyen']);
                 //$result = getLimitProductBestSeller(12);
                 //$category = getAllCategory();
                 $notif = "Đăng nhập thành công";

@@ -1,7 +1,8 @@
 <?php
     extract($result);
-    require_once "inc/header_home.php";
+    include_once "inc/header_home.php";
 ?>
+<link rel="stylesheet" href="asset/css/payMentCSS.css">
 <form action="?page=checkOut" method="post">
                 <section class="container">
                     <div class="container-row1">
@@ -69,5 +70,5 @@
         </div>
         <script src="asset/js/checkout.js"></script>
 <?php
-    require_once "inc/footer.php";
+    include_once     "inc/footer.php";
 ?>

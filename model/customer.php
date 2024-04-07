@@ -33,4 +33,15 @@
         $sql.=' and idTK = '.$idTK;
         return getOne($sql);
     }
+
+    function notif($title, $text, $icon, $button) {
+        echo "<script type='text/javascript'>
+        swal({
+            title: ".$title.",
+            text: ".$text.",
+            icon: ".$icon.",
+            button: ".$button.",
+          });
+        </script>";
+    }
 ?>

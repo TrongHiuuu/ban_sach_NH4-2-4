@@ -1,5 +1,5 @@
 <?php
-function totalPriceInCart() {
+    function totalPriceInCart() {
         $total_price = 0;
         if(isset($_SESSION['cart'])) {
             foreach ($_SESSION['cart'] as $item) {

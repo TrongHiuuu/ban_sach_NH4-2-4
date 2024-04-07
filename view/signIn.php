@@ -4,6 +4,7 @@
     include_once "inc/header_home.php";
     extract($result);
 ?>
+<script src="asset/js/sweetalert.min.js"></script>
 <link rel="stylesheet" href="asset/css/signInCSS.css"> 
     <div class="container">
             <ul class="container-row">

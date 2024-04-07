@@ -1,10 +1,12 @@
 <?php
     session_start();
     if(!isset($_SESSION)) {
-        $_SESSION['user'] = ['email' => '', 'name' => '', 'phanquyen' => ''];
+        $_SESSION['user'] = ['id' => '', 'email' => '', 'name' => '', 'phanquyen' => ''];
+        $_SESSION['cart'] = array();
     }
-    function login_session($inputEmail, $inputFullName, $phanquyen) {
+    function login_session($inputID, $inputEmail, $inputFullName, $phanquyen) {
         $temp = explode(' ', $inputFullName);
+        $_SESSION['user']['id'] = $inputID;
         $_SESSION['user']['email'] = $inputEmail;
         $_SESSION['user']['name'] = $temp[sizeof($temp) - 1];
         $_SESSION['user']['phanquyen'] = $phanquyen;
@@ -18,7 +20,7 @@
         $_SESSION['user']['email'] = $inputEmail;
     }
     function login_session_unset() {
-        $_SESSION['user'] = ['email' => '', 'name' => '', 'phanquyen' => ''];
+        $_SESSION['user'] = ['id' => '', 'email' => '', 'name' => '', 'phanquyen' => ''];
     }
     function reset_password_session($inputEmail) {
         $_SESSION['reset_password'] = ['email' => '', 'verify_code' => ''];
