@@ -1,8 +1,7 @@
 <?php
-    include_once "inc/header_home.php";
+    include_once "inc/header_cart.php";
     extract($result);
 ?>
-<link rel="stylesheet" href="asset/css/cartCSS.css">
            <section class="container">
                 <div class="container-row1">
                     <strong>GIỎ HÀNG</strong>

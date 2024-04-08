@@ -37,13 +37,14 @@
 
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-            $sql = "INSERT INTO taikhoan (email, matkhau, tenTK, dienthoai, phanquyen) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO taikhoan (email, matkhau, tenTK, dienthoai, phanquyen, trangthai) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
             $phanquyen = "KH";
+            $trangthai = '1';
             
             if($prepareStmt) {  
-                mysqli_stmt_bind_param($stmt, "sssss", $email, $password_hash, $fullname, $phone, $phanquyen);
+                mysqli_stmt_bind_param($stmt, "ssssss", $email, $password_hash, $fullname, $phone, $phanquyen, $trangthai);
                 mysqli_stmt_execute($stmt);
                 $notif = "Đăng kí thành công";
                 echo "<script>alert('{$notif}')</script>";

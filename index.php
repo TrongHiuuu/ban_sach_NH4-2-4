@@ -73,11 +73,21 @@ if(isset($_GET['page'])&&($_GET['page']!=="")){
             require_once "controller/customerInfo.php";
             break;
             
-        case 'customerOrder':
+        case 'customerOrders':
             require_once "controller/customerOrders.php";
             break;
+
+        case 'customerOrderDetail':
+            require_once "controller/customerOrderDetail.php";
+            break;
+
+        // case 'cart':
+        //     require_once "controller/cart.php";
+        //     break;
         case 'cart':
-            require_once "controller/cart.php";
+            $result = getLimitProductBestSeller(12);
+            $category = getAllCategory();
+            require_once "view/cart.php";
             break;
 
         case 'addToCart':

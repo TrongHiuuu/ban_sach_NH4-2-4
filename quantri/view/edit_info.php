@@ -1,10 +1,10 @@
 <?php
-    include_once 'inc/header.php';
+    include_once 'inc/header_editInfo.php';
     //extract($result); 
 ?>
 <div class="container">
-    <div class=" form-box login">
-        <h1>Đăng nhập</h1>
+    <div class=" form-box">
+        <h1>Sửa thông tin</h1>
         <form action="?page=editInfo" method="POST">
             <div><input type="text" name="tenTK" placeholder="<?php echo $user_info['tenTK'];?>"></div>
             <div><input type="email" name="email" placeholder="<?php echo $user_info['email'];?>"></div>
@@ -17,8 +17,6 @@
             <div><input type="password" name="r_n_password" placeholder="Xác nhận mật khẩu mới"></div>
             <div><button type="submit" name="submit_password">Lưu mật khẩu</button></div>
         </form>
-        <div class="alert">Thông báo</div>
-        <div>Bạn đã <a href="?page=forgotPassword">quên mật khẩu</a> ?</div>
     </div>
 </div>
 <?php

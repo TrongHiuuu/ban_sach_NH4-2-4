@@ -322,62 +322,73 @@ ul li {
     margin-bottom: 15px;
 }
 
-.container-bottom-content-productCard {
-    height: 100%;
-    width: 250px;   
+/* start: product */
+.container-bottom-right-content-bottom-product {
+    display: block;
+    text-decoration: none;
+    width: 160px;
+    padding: 10px;
+    cursor: pointer;
     background-color: #fff;
-    display: flex;
-    padding: 7px;
-    border: 0.5px solid #CCCCCC;
-    margin-bottom: 12px;
     margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
-.container-bottom-content-productCard img {
-    width: 70px;
-    margin-right: 15px;
+.container-bottom-right-content-bottom-product img {
+    display: block;
+    width: 120px;
+    height: 150px;
+    margin-bottom: 7px;
 }
 
-.container-bottom-content-productCardcontent {
-    font-size: 11px;
+.container-bottom-right-content-bottom-product img:hover {
+    box-shadow: 0 0 5px #26545a;
 }
 
-.container-bottom-content-productCardcontent-text1 {
-    font-size: 14px;
+.container-bottom-right-content-bottom-product-text1:hover {
+    color: #008340;
+}
+
+.container-bottom-right-content-bottom-product-text1 {
+    font-size: 15px;
+    margin-bottom: 7px;
+    width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: black;
+    font-family: 600;
+}
+
+.container-bottom-right-content-bottom-product-text2 {
+    font-size: 13px;
+    color: #696969;
+    margin-bottom: 7px;
+    width: 120px;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.container-bottom-content-productCardcontent-text2 {
-    color: #848282;
-    margin-top: 2px;
+.container-bottom-right-content-bottom-product-text2 .luotban{
+    color: #057A45;
 }
 
-.container-bottom-content-productCardcontent-text3 {
-    border-top: 0.5px dashed #A9A9A9;
-    margin-top: 5px;
-}
-
-.container-bottom-content-productCardcontent-text4 {
-    padding: 5px;
-}
-
-.container-bottom-content-productCardcontent-text5 {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 6px;
-}
-
-.container-bottom-content-productCardcontent-text5-dt1 {
-    text-decoration-line: line-through;
-    color: #848282;
-    font-size: 11px;
-}
-
-.container-bottom-content-productCardcontent-text5-dt2 {
+.container-bottom-right-content-bottom-product-price {
     color: #C02026;
-    font-size: 13px;
+    font-size: 15px;
+    margin-bottom: 7px;
 }
+
+.discount{
+    text-decoration: line-through;
+    color: #666665;
+}
+/* start: product */
 
 .space {
     margin-top: 0px;

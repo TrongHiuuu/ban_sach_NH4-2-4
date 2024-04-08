@@ -1,18 +1,4 @@
-<?php
-    include "../lib/session.php";
-    if (isset($_GET['idTL'])) {
-        $idTL = $_GET['idTL'];
-    }
-    
-    if (isset($_POST['filter'])) {
-        $priceFrom = $_POST['priceFrom'];
-        $priceTo = $_POST['priceTo'];
-    }
-    
-    advance_search_session($idTL, $priceFrom, $priceTo);
-?>
-
-<<div class="container-bottom-left-filter">
+<div class="container-bottom-left-filter">
     <div class="container-bottom-left-filter-category">
         <div style="font-size: 16px" class="container-bottom-left-filter-category-content1">
             <b>TÌM SÁCH THEO DANH MỤC SÁCH</b>

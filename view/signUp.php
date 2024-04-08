@@ -1,8 +1,7 @@
 <?php
-    include_once "inc/header_home.php";
-    //extract($result);
+    include_once "inc/header_signUp.php";
+    extract($result);
 ?>
-<link rel="stylesheet" href="asset/css/signUpCSS.css"> 
         <div class="container">
             <ul class="container-row">
                 <div class="container-row1">

@@ -2,7 +2,7 @@
    extract($category);
 ?>
 <body>
-<link rel="stylesheet" href="asset/css/searchingPageCSS.css">
+    <div class="website">
             <!-- phần header có navbar -->
             <header class="header">
                 <nav class="header-navbar">

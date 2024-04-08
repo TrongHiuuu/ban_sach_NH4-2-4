@@ -42,12 +42,13 @@ function updateQuantity(element) {
     $(document).ready(function () {
         $.ajax({
             type: "POST",
-            url: "../php/cart.php",
+            url: "../controller/cart.php",
             data: {
                 pro_index: productIndex,
                 quantity: qtyValue
             },
             success: function (response) {
+                console.log(response);
                 let data = JSON.parse(response);
                 if(data.status == 'success') {
                     //Cập nhật tổng số sản phẩm trong giỏ và tổng tiền
@@ -55,9 +56,9 @@ function updateQuantity(element) {
                     $('.total-price').text(data.totalPrice); 
                 }
             },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
-            }
+            // error: function(jqXHR, textStatus, errorThrown) {
+            //     console.log(textStatus, errorThrown);
+            // }
         });
     });
 }

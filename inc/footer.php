@@ -1,4 +1,6 @@
-    </body>    
+</section>
+        </div>
+    </body>
     <footer class="footer">
         <div class="footer-row">
             <div class="footer-row1"></div>

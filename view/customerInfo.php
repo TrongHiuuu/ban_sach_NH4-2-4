@@ -1,8 +1,7 @@
 <?php
-include_once 'inc/header_home.php';
+include_once 'inc/header_customerInfo.php';
     extract($result);
 ?>
-<link rel="stylesheet" href="asset/css/customerInfoCSS.css">
                 <div class="container-bottom">
                     <div class="container-content-left">
                         <div class="container-content-left-user">

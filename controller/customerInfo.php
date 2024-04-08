@@ -1,5 +1,5 @@
 <?php
-    $sql = "SELECT * FROM taikhoan where email='".$_SESSION['user']['email']."' LIMIT 1";
+    $sql = "SELECT * FROM taikhoan where idTK='".$_SESSION['user']['id']."' LIMIT 1";
     $result = mysqli_query($conn, $sql);
     $user_info = mysqli_fetch_array($result);
     if(isset($_POST['submit_info'])) {

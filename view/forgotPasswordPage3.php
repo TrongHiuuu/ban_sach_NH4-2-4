@@ -1,8 +1,7 @@
 <?php
-    include_once "inc/header_home.php";
+    include_once "inc/header_forgotPasswordPage2.php";
     extract($result);
-?>
-<link rel="stylesheet" href="asset/css/forgotPasswordPage2CSS.css"> 
+?> 
         <div class="container">
             <form class="container-form" action="?page=forgotPassword3" method="POST">
                 <div class="container-form-row1">

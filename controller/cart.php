@@ -1,7 +1,7 @@
 <?php
     if (!empty($_SESSION['user']['id'])){
         //Xóa một sản phẩm trong giỏ hàng
-        if(isset($_GET['index']) && ($_GET['index'] >= 0)) {
+        if(isset($_GET['index']) && ($_GET['index'] >= 0) && isset($_GET['delcart'])) {
             array_splice($_SESSION['cart'], $_GET['index'], 1); //xóa phần tử thứ index khỏi mảng
             header("location:index.php?page=cart");
         }
@@ -24,16 +24,11 @@
             echo json_encode(array('status' => 'success', 'totalQty' => $totalQty, 'totalPrice' => number_format($totalPrice, 0, ',', '.')." VNĐ"));
             exit();
         }
-        $result = getLimitProductBestSeller(12);
-        $category = getAllCategory();
-        require_once "view/cart.php";
     }
     else {
-        $title = "Lưu ý!!!";
-        $text = "Bạn cần đăng nhập để có thể vào giỏ hàng";
-        $icon = "warning";
-        $button = "Tôi đã hiểu";
-        notif($title, $text, $icon, $button);
-        header("Location:index.php?page=signIn");
+       // header("Location:index.php?page=signIn");
     }
+    // $result = getLimitProductBestSeller(12);
+    // $category = getAllCategory();
+    // require_once "view/cart.php";
 ?>

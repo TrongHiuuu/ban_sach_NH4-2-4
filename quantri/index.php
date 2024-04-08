@@ -17,7 +17,7 @@
                     $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     if (mysqli_num_rows($result) > 0) {
                         if(password_verify($inputPassword, $user['matkhau'])){
-                            login_session($user['email'], $user['tenTK'], $user['phanquyen']);
+                            login_session($user['idTK'], $user['email'], $user['tenTK'], $user['phanquyen']);
                             $notif = "Đăng nhập thành công";
                             echo "<script>alert('{$notif}'')</script>";
                             switch ($user['phanquyen']) {
@@ -68,7 +68,7 @@
                 }
                 break;  
             case 'editInfo':
-                $sql = "SELECT * FROM taikhoan where email='".$_SESSION['user']['username']."' LIMIT 1";
+                $sql = "SELECT * FROM taikhoan where email='".$_SESSION['user']['email']."' LIMIT 1";
                 $result = mysqli_query($conn, $sql);
                 $user_info = mysqli_fetch_array($result);
                 require_once 'view/edit_info.php';
@@ -79,6 +79,7 @@
                         $sql_run = mysqli_query($conn, $sql);
                         $notif = 'Thay đổi họ và tên thành công';
                         echo "<script>alert('{$notif}')</script>";
+                        login_session_set_name($tenTK);
                     }
             
                     $email = $_POST['email'];
@@ -87,7 +88,7 @@
                         $sql_run = mysqli_query($conn, $sql);
                         $notif = 'Thay đổi email thành công';
                         echo "<script>alert('{$notif}')</script>";
-                        
+                        login_session_set_email($email);
                     }
             
                     $phone = $_POST['phone'];
@@ -97,7 +98,6 @@
                         $notif = 'Thay đổi số điện thoại thành công';
                         echo "<script>alert('{$notif}')</script>";
                     }
-                    login_session($email, $tenTK, $_SESSION['user']['phanquyen']);
                 }
                 if(isset($_POST['submit_password'])) {
                     $c_password = $_POST['c_password'];
@@ -112,7 +112,6 @@
                             if($sql_run) {
                                 $notif = 'Thay đổi mật khẩu thành công';
                                 echo "<script>alert('{$notif}')</script>";
-                                require "view/edit_info.php";
                             }
                             else {
                                 $notif = 'Đã có lỗi xảy ra';
